@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏦 QuestionMarketCap (QMC)
 
-## Getting Started
 
-First, run the development server:
+A decentralized opinion exchange platform where users can buy the right to answer questions. Think CoinMarketCap, but for opinions and answers rather than cryptocurrencies.
+
+## 🚀 Features
+
+* **Question Management**: Submit and manage questions with a unique ID system
+* **Answer Trading**: Buy the right to change answers with dynamic pricing
+* **Price Mechanism**: Dynamic pricing ranging from -20% to +100%
+* **Web3 Integration**: Built on Base blockchain with ThirdWeb integration
+* **Fee Structure**: 95% to answer owners, 5% to platform (first 100 questions)
+
+## 🛠️ Tech Stack
+
+* **Frontend**: Next.js 14 with App Router
+* **Web3**: ThirdWeb, Onchain Kit by Coinbase
+* **Blockchain**: Base
+* **UI**: TailwindCSS, Recharts
+* **Smart Contracts**: Solidity
+
+## 🏗️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/axelroffi/questionmarketcap.git
+cd questionmarketcap
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Set up environment variables:
+
+```bash
+cp .env.example .env.local
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+questionmarketcap/
+├── app/
+│   ├── components/
+│   ├── lib/
+│   ├── styles/
+│   └── public/
+├── contracts/
+└── tests/
+```
 
-## Learn More
+## 🔒 Smart Contract Structure
 
-To learn more about Next.js, take a look at the following resources:
+```solidity
+struct Question {
+    uint256 id;
+    string question;
+    string currentAnswer;
+    address owner;
+    uint256 currentPrice;
+    uint256 lastPrice;
+    uint256[] labels;
+    uint256 totalVolume;
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'feat: Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Deploy on Vercel
+## 📝 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🙏 Acknowledgments
+
+* Base blockchain team
+* ThirdWeb team
+* Coinbase's Onchain Kit team
+
+## 🔗 Links
+
+* 🌐 Website: 
+* 🐦 Twitter: 
+* 📚 Documentation:
+
+## ⚡ Performance Targets
+
+* Transaction Success Rate: > 99%
+* Wallet Connection Time: < 2s
+* Page Load Time: < 3s
+* System Uptime: > 99.9%
+
+## 📊 Current Status
+
+* 🚧 Project Status: In Development
+* 🎯 Current Version: 0.1.0
+* 📅 Expected Launch: TBD
+
+---
+Built with ❤️ by Axel Roffi
